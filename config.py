@@ -4,7 +4,7 @@ class Config:
     '''
     General configuration
     '''
-    pass
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///pomodoro.db'
 
 class ProdConfig(Config):
     '''
