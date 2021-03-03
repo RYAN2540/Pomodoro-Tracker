@@ -36,30 +36,26 @@ def pomodoro():
 		breakTarget = inputBreakTarget[3:]
 
 		# save timer intervals for logged in user
-		newTimer = Timer(pomodoro_interval=timerTarget, 
-										break_interval=breakTarget)
+		newTimer = Timer(pomodoro_interval=timerTarget, break_interval=breakTarget)
 		db.session.add(newTimer)
 		db.session.commit()
 
 		todos=getTodos()
-		return render_template('pomodoro.html', todos=todos, timerTarget=timerTarget, breakTarget=breakTarget, 
-												inputTimerTarget=inputTimerTarget, 
-												inputBreakTarget=inputBreakTarget)
+		return render_template('pomodoro.html', todos=todos, timerTarget=timerTarget, breakTarget=breakTarget,
+		inputTimerTarget=inputTimerTarget, inputBreakTarget=inputBreakTarget)
 	else:
 		timer = Timer.query.filter_by().first()
 		todos=getTodos()
 		if(timer):
 			inputTimerTarget = ('00:' + str(timer.pomodoro_interval))
 			inputBreakTarget = ('00:' + str(timer.break_interval))
-			return render_template('pomodoro.html', todos=todos, timerTarget=timer.pomodoro_interval, 
-													breakTarget=timer.break_interval,
-													inputTimerTarget=inputTimerTarget,
-													inputBreakTarget=inputBreakTarget)
+			return render_template('pomodoro.html', todos=todos, timerTarget=timer.pomodoro_interval,
+			breakTarget=timer.break_interval,inputTimerTarget=inputTimerTarget,inputBreakTarget=inputBreakTarget)
 		else:
 			timerTarget = '25'
 			breakTarget = '5'
-			return render_template('pomodoro.html', todos=todos, timerTarget=timerTarget, breakTarget=breakTarget, 
-													inputTimerTarget=timerTarget, inputBreakTarget=breakTarget)
+			return render_template('pomodoro.html', todos=todos, timerTarget=timerTarget,
+			breakTarget=breakTarget, inputTimerTarget=timerTarget, inputBreakTarget=breakTarget)
 
 
 # todos manager
