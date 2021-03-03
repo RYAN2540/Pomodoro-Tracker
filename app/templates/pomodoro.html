@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'base.html' %}
 {% block head %}
 <script src="/static/dist/easytimer.min.js"></script>
 <script id="pomodoro" type="text/javascript" src="/static/pomodoro.js" timerTarget={{timerTarget}}
@@ -58,7 +58,7 @@
 
 <div class="alert alert-dark" role="alert">
     <h3><b>To-Do List</b></h3>
-    <a href="{{url_for('todos')}}" class="button">
+    <a href="{{url_for('main.todos')}}" class="button">
         <button id="table-button" type="submit" class="btn btn-dark btn-lg">
             Modify
         </button>
