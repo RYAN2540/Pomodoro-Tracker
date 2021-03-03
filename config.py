@@ -4,22 +4,34 @@ class Config:
     '''
     General configuration
     '''
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///pomodoro.db'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///\pomodoro.db'
+    SECRET_KEY = 'gakuyajefferson'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class ProdConfig(Config):
     '''
-    General Config for Prod
+    Production configuration child class
+
+    Args:
+        Config: The parent configuration class with general configuration settings
     '''
 
 class DevConfig(Config):
     '''
-    General Config for development
+    Development configuration child class
+
+    Args:
+        Config: The parent configuration class with General configuaration settings
     '''
+
     pass
 
 class TestConfig(Config):
     '''
-    General Config for Tests
+    Testing Configuration child class
+
+    Args:
+        Config: The parent configuration class with General configuration settings
     '''
     pass
 

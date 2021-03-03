@@ -16,21 +16,9 @@
         </ul>
 
         <ul class="navbar-nav ml-auto">
-            {% if session.logged_in %}
             <li class="nav-item active ml-auto">
-                <a class="nav-link" href="/pomodoro">Pomodoro <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/app/templates/pomodoro.html">Pomodoro <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active ml-auto">
-                <a class="nav-link" href="{{ url_for('logout') }}">Logout <span class="sr-only">(current)</span></a>
-            </li>
-            {% else %}
-            <li class="nav-item active ml-auto">
-                <a class="nav-link" href="/register">Register <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{{url_for('login')}}">Login <span class="sr-only">(current)</span></a>
-            </li>
-            {% endif %}
         </ul>
     </div>
 </nav>
