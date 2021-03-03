@@ -9,7 +9,7 @@ class User(UserMixin, db.Model):
     password = db.Column(db.String(50), nullable = False)
     email = db.Column(db.String(50))
 
-class Todos(db.MOdel):
+class Todos(db.Model):
     id = db.Column(db.Integer(), primary_key = True)
     username = db.Column(db.String(50))
     category = db.Column(db.String(50), nullable = True)

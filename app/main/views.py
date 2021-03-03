@@ -1,9 +1,8 @@
 from . import main
 from .. import db
-from ..models import User, Todos, Timer, Feedbacks
+from ..models import User, Todos, Timer
 from flask import render_template, redirect, url_for, session, request, flash
-from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+from flask_login import login_required, current_user
 
 @main.route('/')
 def index():
@@ -79,7 +78,7 @@ def add_todo():
             return redirect(url_for('todos', todos = todos))
         else:
             flash('Please enter complete details')
-            return render_template(add_todo.html)
+            return render_template('add_todo.html')
     else:
         return render_template('add_todo.html')
 
