@@ -24,7 +24,6 @@ def getTodos():
 	return todos
 
 
-
 # pomodoro-tracker page
 @main.route('/pomodoro', methods=["GET", "POST"])
 def pomodoro():
@@ -67,7 +66,7 @@ def pomodoro():
 @main.route('/todos', methods=["GET", "POST"])
 def todos():
 	todos = getTodos()	
-	return render_template('todos.html',todos=todos)
+	return render_template('todos.html', todos = todos)
 
 
 # add new todos
@@ -83,7 +82,7 @@ def add_todo():
 			db.session.add(newTodo)
 			db.session.commit()
 			todos = getTodos()
-			return redirect(url_for('todos', todos=todos))
+			return redirect(url_for('main.todos', todos=todos))
 		else:
 			flash('Please enter complete details', 'danger')
 			return render_template('add_todo.html')
@@ -105,7 +104,7 @@ def edit_todo(id):
 		db.session.commit()
 
 		todos = getTodos()
-		return redirect(url_for('todos',todos=todos))
+		return redirect(url_for('main.todos',todos=todos))
 	else:
 		if editTodo and editTodo:
 			return render_template('edit_todo.html',editTodo=editTodo)
@@ -117,7 +116,7 @@ def delete_todo(id):
 	db.session.delete(delTodo)
 	db.session.commit()
 	todos = getTodos()
-	return redirect(url_for('todos', todos=todos))
+	return redirect(url_for('main.todos', todos=todos))
 
 
 # feedback page

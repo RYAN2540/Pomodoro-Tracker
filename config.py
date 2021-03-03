@@ -4,7 +4,7 @@ class Config:
     '''
     General configuration
     '''
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///\pomodoro.db'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///timer.db'
     SECRET_KEY = 'gakuyajefferson'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 

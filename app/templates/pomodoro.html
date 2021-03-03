@@ -22,7 +22,7 @@
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div{% extends 'layout.html' %} {% block head %} <script src="/static/easytimer.min.js">
+        <div{% extends 'base.html' %} {% block content %} <script src="/static/easytimer.min.js">
             </script>
             <script id="pomodoro" type="text/javascript" src="/static/pomodoro.js" timerTarget={{timerTarget}}
                 breakTarget={{breakTarget}}>
@@ -30,7 +30,7 @@
             <link rel="stylesheet" type="text/css" href="/static/pomodoro.css">
             {% endblock %}
 
-            {% block body %}
+            
             <br><br><br><br>
             <div id="chronoExample">
                 <div class="values">00:00:00</div>

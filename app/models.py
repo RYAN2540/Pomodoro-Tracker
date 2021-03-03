@@ -10,7 +10,6 @@ class Todos(db.Model):
 
 class Timer(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
-    username = db.Column(db.String(50))
     pomodoro_interval = db.Column(db.Integer())
     break_interval = db.Column(db.Integer())
 
