@@ -1,9 +1,24 @@
-from . import db
-from werkzeug.security import generate_password_hash,check_password_hash
-from flask_login import UserMixin
-from . import login_manager
+from app import db
 from datetime import datetime
 
+<<<<<<< HEAD
+class Todos(db.Model):
+    id = db.Column(db.Integer(), primary_key = True)
+    category = db.Column(db.String(50), nullable = True)
+    description = db.Column(db.String(200), nullable=False)
+    completed = db.Column(db.Boolean(), default=False)
+    create_date = db.Column(db.DateTime(), default=datetime.now())
+
+class Timer(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    pomodoro_interval = db.Column(db.Integer())
+    break_interval = db.Column(db.Integer())
+
+class Feedbacks(db.Model):
+	id = db.Column(db.Integer(), primary_key=True)
+	username = db.Column(db.String(50))
+	feedback = db.Column(db.String(100))
+=======
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
@@ -49,3 +64,4 @@ class Task(db.Model):
 
     def __repr__(self):
         return f'{self.task_title}'
+>>>>>>> 3c575a9699105a90336370be2d0d4bb79b512854
